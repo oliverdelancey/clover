@@ -1,0 +1,86 @@
+html, body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  display: block;
+  overflow: auto;
+  background: #222233;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 100%;
+}
+
+.topBar {
+  display: flex;
+  overflow: clip;
+  height: 5%;
+}
+
+.statusBar {
+  display: flex;
+  overflow: clip;
+  height: 5%;
+}
+
+.mainArea {
+  display: flex;
+  overflow: auto;
+  height: 90%;
+  width: 100%;
+}
+
+.pane {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.left, .right {
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  float: left;
+  background-color: #FF0000;
+}
+
+.right {
+  float: right;
+  background-color: #00FF00;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  /*width: 60%;*/
+  background-color: #0000FF;
+}
+
+.editorArea {
+  height: 100%;
+}
+
+.editorTabs {
+  /* width: 60%; */
+  height: 60%;
+}
+
+.replArea {
+  height: 100%;
+  display: flex;
+  background: #333344;
+}
+
+.CodeEditor {
+  /* height: 60%; */
+  /* width: 100%; */
+  background: black;
+}
