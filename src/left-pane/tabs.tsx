@@ -33,7 +33,7 @@ const DraggableTab: React.FC<DraggableTabProps> = ({ tab, index, moveTab }) => {
   });
 
   return (
-    <div ref={(node) => ref(drop(node))} style={{ padding: "8px", cursor: "move" }}>
+    <div ref={(node) => ref(drop(node))} style={{ padding: "8px", cursor: "pointer" }}>
       {tab.name}
     </div>
   );

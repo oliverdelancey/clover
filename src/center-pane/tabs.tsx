@@ -80,7 +80,7 @@ export const DraggableTab: React.FC<DraggableTabProps> = ({ tab, index, moveTab,
             ref={(node) => {
                 ref(drop(node));
             }}
-            style={{ display: "flex", padding: "8px", cursor: "move" }}
+            style={{ display: "flex", padding: "8px", cursor: "pointer" }}
         >
             <div style={{ flexGrow: 1 }} onClick={() => selectTab(index)}>
                 {tab.name}
