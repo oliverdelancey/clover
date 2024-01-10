@@ -80,7 +80,11 @@ html, body {
 }
 
 .CodeEditor {
-  /* height: 60%; */
+  height: 100%;
   /* width: 100%; */
   background: black;
+}
+
+.cm-editor {
+  height: 100%;
 }

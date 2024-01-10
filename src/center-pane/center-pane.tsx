@@ -5,6 +5,16 @@ import 'split-pane-react/esm/themes/default.css';
 import CodeEditor from "./editor";
 import DragTabs, { useDragTabs } from "./tabs";
 
+export interface IElectronAPI {
+    onAddEditorTab: (fn: any) => Promise<void>,
+}
+
+declare global {
+    interface Window {
+        electronAPI: IElectronAPI
+    }
+}
+
 const CenterPane = () => {
     const [centerSplitSizes, setCenterSplitSizes] = useState([60, 40]);
 
@@ -14,6 +24,10 @@ const CenterPane = () => {
             content: <CodeEditor />
         },
     ]);
+
+    window.electronAPI.onAddEditorTab(() => {
+        tabs.addTab({ name: "New Tab", content: <p>New Tab here</p>});
+    })
 
     return (
         <div className="center pane">
@@ -27,12 +41,6 @@ const CenterPane = () => {
             >
                 <div className="editorArea">
                     <DragTabs dragTabs={tabs} />
-                    <button onClick={() => tabs.addTab(
-                        {
-                            name: "New Tab",
-                            content: <p>New Tab here</p>
-                        })}
-                    >Add Tab</button>
                 </div>
                 <div className="replArea">
                     <p>REPL Here</p>
